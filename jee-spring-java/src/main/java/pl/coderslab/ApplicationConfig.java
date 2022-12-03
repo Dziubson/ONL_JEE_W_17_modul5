@@ -2,9 +2,8 @@ package pl.coderslab;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.coderslab.beans.Captain;
-import pl.coderslab.beans.HelloWorld;
-import pl.coderslab.beans.Ship;
+import org.springframework.context.annotation.Scope;
+import pl.coderslab.beans.*;
 
 @Configuration
 public class ApplicationConfig {
@@ -25,5 +24,15 @@ public class ApplicationConfig {
         return new Ship(jackSparrow());
     }
 
+    @Bean
+    @Scope("prototype")
+    public ScopePrototype scopePrototype() {
+        return new ScopePrototype();
+    }
+
+    @Bean
+    public ScopeSingleton scopeSingleton() {
+        return new ScopeSingleton();
+    }
 
 }
