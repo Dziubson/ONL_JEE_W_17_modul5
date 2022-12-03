@@ -2,6 +2,7 @@ package pl.coderslab;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pl.coderslab.beans.HelloWorld;
+import pl.coderslab.beans.Ship;
 
 public class SpringDiApplication {
 
@@ -15,6 +16,9 @@ public class SpringDiApplication {
         System.out.println(hW);
         helloWorld.hello();
         System.out.println(helloWorld);
+
+        Ship ship = ctx.getBean("blackPearl", Ship.class);
+        ship.getCaptain().startSailing();
 
         ctx.close();
     }
