@@ -10,6 +10,22 @@ public class CartItem {
         this.product = product;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double itemAmount() {
+        return quantity * product.getPrice();
+    }
+
     @Override
     public String toString() {
         return "CartItem{" +
